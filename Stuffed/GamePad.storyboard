@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9527.1" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AbS-nQ-aVx">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9525.1"/>
+    </dependencies>
+    <scenes>
+        <!--Game Pad Controller-->
+        <scene sceneID="Bmx-Ih-coV">
+            <objects>
+                <viewController id="AbS-nQ-aVx" customClass="GamePadController" customModule="Stuffed" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qfd-SN-cc1"/>
+                        <viewControllerLayoutGuide type="bottom" id="XQa-9m-0GK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gIP-Dp-Fxj">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XgO-Hr-LYn">
+                                <rect key="frame" x="145" y="88" width="278" height="192"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="TZ8-PR-rtK">
+                                        <rect key="frame" x="0.0" y="0.0" width="278" height="96"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6FC-k0-Zgl">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="96"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
+                                                <state key="normal" title="Jump">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="gamePadControllerButtonPressed:" destination="AbS-nQ-aVx" eventType="touchUpInside" id="haI-lJ-1gV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfI-gz-ZVz">
+                                                <rect key="frame" x="148" y="0.0" width="130" height="96"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="70"/>
+                                                <state key="normal" title="Fire">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="gamePadControllerButtonPressed:" destination="AbS-nQ-aVx" eventType="touchUpInside" id="G1i-Y6-Lvk"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="6H5-Nf-ziN">
+                                        <rect key="frame" x="0.0" y="96" width="278" height="96"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gk4-Kx-yBy">
+                                                <rect key="frame" x="0.0" y="0.0" width="129" height="96"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
+                                                <state key="normal" title="Left">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="gamePadControllerButtonPressed:" destination="AbS-nQ-aVx" eventType="touchUpInside" id="GRj-Ea-Zlc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qP9-dM-Y62">
+                                                <rect key="frame" x="157" y="0.0" width="121" height="96"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
+                                                <state key="normal" title="Right">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="gamePadControllerButtonPressed:" destination="AbS-nQ-aVx" eventType="touchUpInside" id="dhU-kQ-kVT"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="XgO-Hr-LYn" firstAttribute="centerX" secondItem="gIP-Dp-Fxj" secondAttribute="centerX" id="QVd-Vc-FIO"/>
+                            <constraint firstItem="XgO-Hr-LYn" firstAttribute="centerY" secondItem="gIP-Dp-Fxj" secondAttribute="centerY" constant="24" id="SvB-7X-G0E"/>
+                        </constraints>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="87I-0E-F0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="93" y="135"/>
+        </scene>
+    </scenes>
+</document>
