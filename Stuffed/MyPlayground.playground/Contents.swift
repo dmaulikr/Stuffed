@@ -37,10 +37,40 @@ for case let number? in arrayOfOptionalInts {
 
 
 
-//switch point {
-//case ("0", "0"):
-//    print("(0, 0) is at the origin.")
-//default:
-//    print("The point is at (\(point.0), \(point.1)).")
+
+//
+//func add(x: Int, y: Int) {
+//    return x + y
 //}
-//// prints "The point is at (1, 2).
+
+func add2(x: Int) -> Int->Int {
+    return { y in x + y }
+}
+
+
+add2(2)
+let addfunc = add2(2)
+addfunc(9)
+
+func take(x: Int) -> Int -> Int {
+    return { y in x + y }
+}
+
+
+
+
+let arr = [1,2,3]
+
+arr.map{  $0 + 1 }
+
+
+
+
+
+
+
+
+
+
+
+

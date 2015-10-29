@@ -32,6 +32,8 @@ class GameBoardScene: SKScene {
         physicsBody?.categoryBitMask = 0b1
         
         physicsWorld.contactDelegate = self
+        
+    
     }
 
     
@@ -50,6 +52,8 @@ class GameBoardScene: SKScene {
         addChild(pixel)
         
         playerPixels[name] = pixel
+        currentDirections[name] = .Right
+        
     }
     typealias Action = String?
     
@@ -71,6 +75,8 @@ class GameBoardScene: SKScene {
             }
         }
     }
+    
+    
     func firePixel(name: DisplayName) {
         
         if let pixel = playerPixels[name] {
@@ -103,6 +109,7 @@ class GameBoardScene: SKScene {
     
     
     func movePixel(name: DisplayName, direction: String) {
+        
         let pixel = playerPixels[name]
         let d = PlayerDirection(rawValue: direction)
         

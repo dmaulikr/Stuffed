@@ -48,7 +48,12 @@ class GamePadController: UIViewController, MCNearbyServiceAdvertiserDelegate, MC
         case "Jump": sendInfo([ "action" : "Jump"])
         case "Fire": sendInfo([ "action" : "Fire"])
         case "Left": sendInfo([ "action" : "move", "direction": "left" ])
-        case "Right": sendInfo([ "action" : "move", "direction": "right" ])
+        case "Right":
+          
+         
+            sendData(GameData(action: .Move, direction: .Right))
+            
+//            sendInfo([ "action" : "move", "direction": "right" ])
         
 
         default: break
@@ -57,6 +62,18 @@ class GamePadController: UIViewController, MCNearbyServiceAdvertiserDelegate, MC
     }
 
     
+    func sendData(gameData: GameData) {
+        
+        if let bID = boardID {
+            do {
+                try session.sendData(gameData.data, toPeers: [bID], withMode: .Reliable)
+            } catch {
+                print(error)
+            }
+
+        }
+        
+    }
     
     
     func sendInfo(info: [String: String]) {
@@ -77,7 +94,7 @@ class GamePadController: UIViewController, MCNearbyServiceAdvertiserDelegate, MC
         super.viewDidLoad()
         
         session = MCSession(peer: myPeerId)
-        advertiser = MCNearbyServiceAdvertiser(peer: myPeerId, discoveryInfo: nil, serviceType: "stuffed")
+        advertiser = MCNearbyServiceAdvertiser(peer: myPeerId, discoveryInfo: ["color":"green"], serviceType: serviceType)
         advertiser.delegate = self
         advertiser.startAdvertisingPeer()
         
